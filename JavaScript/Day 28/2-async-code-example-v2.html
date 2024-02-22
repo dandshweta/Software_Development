@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  console.log("Starts");
+
+  setTimeout(() => {
+    console.log("STI: 0 Sec");
+  }, 0);
+
+  setTimeout(() => {
+    console.log("STI: 10 Sec");
+  }, 10000);
+
+  for (let i = 0; i < 10; i++) {
+    console.log("i: ", i);
+  }
+
+  setTimeout(() => {
+    console.log("STI 2: 0 Sec");
+  }, 0);
+
+  console.log("Code ending");
+</script>
+
+<script>
+  console.log("Start");
+  setTimeout(() => {
+    console.log("STI 2: 10 Milli Sec");
+  }, 10);
+  setTimeout(() => {
+    console.log("STI 2: 10 Milli Sec");
+  }, 0);
+
+  function run() {
+    setTimeout(() => {
+      console.log("STI 2: 10 Milli Sec");
+    }, 10);
+  }
+
+  console.log("Calling Fun");
+  run();
+
+  console.log("End");
+</script>

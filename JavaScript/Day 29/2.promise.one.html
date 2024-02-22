@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  const promise = (key) => {
+    return new Promise((reply, reject) => {
+      if (key) {
+        reply("Done");
+      } else {
+        reject("Failed");
+      }
+    });
+  };
+
+  // Calling -> Wrong way
+  /*
+  const p1 = promise(0);
+  const p2 = promise(2);
+  */
+
+  const success = (data) => {
+    console.log("Success: ", data);
+  };
+
+  const error = (err) => {
+    console.log("Error: ", err);
+  };
+
+  console.log("Started");
+
+  promise(0).then(success).catch(error);
+  promise(10).then(success).catch(error);
+
+  for (let i = 0; i < 5; i++) {
+    console.log("I: ", i);
+  }
+
+  console.log("End");
+</script>

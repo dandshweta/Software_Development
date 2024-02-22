@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  const pr = () => {
+    const p = new Promise((reply, reject) => {
+      reply(10);
+      reject(20);
+    });
+
+    return p;
+  };
+
+  const add = (a, b) => {
+    const result = a + b;
+    return result;
+  };
+
+  console.log(add(10, 20));
+
+  pr()
+    .then((data) => {
+      console.log("Data:", data);
+    })
+    .catch((err) => {
+      console.log("Err: ", err);
+    });
+</script>

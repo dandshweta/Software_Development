@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #para {
+        color: rgb(255, 0, 230);
+        padding: 12px;
+        border: 4px solid red;
+      }
+
+      .para-element {
+        color: blue;
+        background-color: aquamarine;
+        border: 4px solid silver;
+      }
+
+      .p-1 {
+        box-shadow: 1px 1px 1px 1px silver;
+      }
+
+      .c-red {
+        color: rgb(72, 0, 255);
+      }
+
+      .text-small {
+        font-size: 12px;
+        padding: 12px;
+      }
+
+      .text-border {
+        border: 1px solid silver;
+      }
+
+      #e-red {
+        color: brown;
+      }
+
+      #padding-12 {
+        padding: 200px;
+      }
+
+      .a {
+        color: red;
+        padding: 12;
+      }
+
+      .b {
+        background-color: red;
+        padding: 7px;
+      }
+      .c {
+        font-size: 12px;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="para" class="para-element p-1">First Para</p>
+    <p id="para" class="para-element p-1">Second Para</p>
+
+    <h1 class="c-red text-small text-border" id="padding-12">
+      I'm a heading Tag
+    </h1>
+  </body>
+</html>
+
+<script>
+  const paraElement = document.getElementById("para");
+  console.log("@AJ paraElement: ", paraElement);
+</script>

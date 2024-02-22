@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  const add = (a, b) => {
+    a + b;
+  };
+
+  const result = add(1, 4) || 10;
+</script>
+
+<script>
+  const a = () => {
+    return new Promise((reply, reject) => {
+      reject(true);
+    });
+  };
+
+  const runPromises = async () => {
+    let aData = await a().catch((err) => null);
+    if (!aData) {
+      aData = 20;
+    }
+    console.log({ aData });
+  };
+
+  runPromises();
+</script>
+
+<script>
+  const runAPI = async () => {
+    try {
+      const result = await fetch("API_UR:");
+      const parsedJSON = await result.json();
+    } catch (err) {
+      console.log("Err: ", err);
+    }
+  };
+</script>

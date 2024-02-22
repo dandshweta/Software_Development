@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /*  li {
+        color: red;
+      } */
+
+      /* .nav:first-child li {
+        color: red;
+      } */
+
+      .first > .menu > ul > li {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="first">
+      <div class="menu">
+        <ul class="nav">
+          <li>A</li>
+          <li>B</li>
+          <li>C</li>
+          <li>
+            <ul>
+              <li>C.0</li>
+              <li>C.0</li>
+              <li>C.0</li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="nav">
+          <li>A.0</li>
+          <li>B.0</li>
+          <li>C.0</li>
+        </ul>
+      </div>
+
+      <div class="menu">
+        <ul class="nav">
+          <li>A</li>
+          <li>B</li>
+          <li>C</li>
+        </ul>
+        <ul class="nav">
+          <li>A.0</li>
+          <li>B.0</li>
+          <li>C.0</li>
+        </ul>
+      </div>
+
+      <ol>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+      </ol>
+    </div>
+  </body>
+</html>

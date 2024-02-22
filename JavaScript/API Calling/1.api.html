@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  /*   console.log("Code started");
+
+  function addNum(a, b) {
+    return a + b;
+  }
+
+  const sum = addNum(2, 7);
+  const sum2 = addNum(2, 7);
+  const sum3 = addNum(2, 7);
+  console.log("Sum: ", sum);
+  console.log("Sum2: ", sum2);
+  console.log("Sum3: ", sum3);
+
+  for (let i = 0; i < 5; i++) {
+    console.log("i: ", i);
+  } */
+</script>
+
+<script>
+  console.log("1. Code started");
+
+  fetch("https://fakestoreapi.com/products")
+    .then((data) => data.json())
+    .then((data) => {
+      console.log("2. data: ", data);
+      // Logic
+      // Logic
+      // Logic
+    })
+    .catch((err) => console.log("2.1 Error", err));
+
+  console.log("3. Api completed");
+
+  console.log("4. Loop Started");
+  for (let i = 0; i < 500; i++) {
+    console.log("5. i: ", i);
+  }
+  console.log("6. Loop Completed");
+</script>
+
+<script>
+  console.log("Started");
+
+  const p = () => {
+    return new Promise((reply, reject) => {
+      console.log("Inside Promise");
+      reply("Done");
+    });
+  };
+
+  p().then((data) => {
+    console.log(data);
+    nowYouCanRun();
+  });
+
+  function nowYouCanRun() {
+    console.log("I'm ready since promise is done");
+  }
+
+  for (let i = 0; i < 5; i++) {
+    console.log("i: ", i);
+  }
+
+  console.log("Code end");
+</script>
+
+<script>
+  console.log("Code Started");
+  fetch("https://www.google.com").then(function a() {
+    console.log("Api completed");
+  });
+
+  Promise.resolve().then(function b() {
+    console.log();
+  });
+
+  Promise.reject().catch(function c() {});
+
+  for (let i = 0; i < 5; i++) {
+    console.log("i: ", i);
+  }
+  console.log("Code End");
+</script>

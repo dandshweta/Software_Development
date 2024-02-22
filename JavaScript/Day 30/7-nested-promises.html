@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  const a = () => {
+    return new Promise((reply, reject) => {
+      reply(true);
+    });
+  };
+
+  const b = () => {
+    return new Promise((reply, reject) => {
+      reply(true);
+    });
+  };
+
+  const c = () => {
+    return new Promise((reply, reject) => {
+      reply(true);
+    });
+  };
+
+  const d = () => {
+    return new Promise((reply, reject) => {
+      reply(true);
+    });
+  };
+
+  // Traditional Way
+  a()
+    .then((data) => {
+      // Success
+      b()
+        .then((bData) => {
+          //Success
+          c()
+            .then((cData) => {
+              //Success
+              d()
+                .then((dData) => {
+                  // Success
+                })
+                .catch((err) => {
+                  // Error
+                });
+            })
+            .catch((err) => {
+              // Err
+            });
+        })
+        .catch((err) => {
+          // Err
+        });
+    })
+    .catch((err) => {
+      // Error
+    });
+
+  // ES7 Way -> Async Await
+
+  const processPromises = async () => {
+    const aData = await a();
+    const bData = await b();
+    const cData = await c();
+    const dData = await d();
+  };
+
+  const processPromisesV2 = async () => {
+    try {
+      const aData = await a();
+      const bData = await b(aData);
+      const cData = await c(bData);
+      const dData = await d(cData);
+    } catch (err) {
+      console.log("Error: ", err);
+    }
+  };
+
+  const processPromisesV3 = async () => {
+    const aData = await a().catch((err) => null);
+    if (!aData) {
+      return "AError";
+    }
+
+    const bData = await b().catch((err) => null);
+    if (!bData) {
+      return "BError";
+    }
+
+    const cData = await c().catch((err) => null);
+    if (!cData) {
+      return "CError";
+    }
+
+    const dData = await d().catch((err) => null);
+    if (!dData) {
+      return "dError";
+    }
+  };
+</script>
+
+<script>
+  fetch("url")
+    .then((data) => data.json())
+    .then((data) => console.log(data));
+
+  const callApi = async () => {
+    const result = await fetch("url");
+    const parsedJSON = await result.json();
+
+    console.log(parsedJSON);
+  };
+</script>

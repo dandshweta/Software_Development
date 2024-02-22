@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="one"></p>
+    <p id="two"></p>
+    <p id="three"></p>
+    <p id="four"></p>
+    <p id="five"></p>
+
+    <button onclick="updateUi()">Update UI</button>
+  </body>
+</html>
+
+<script>
+  const firstPara = document.getElementById("one");
+  const secondPara = document.getElementById("two");
+  const thirdPara = document.getElementById("three");
+  const fourthPara = document.getElementById("four");
+  const fifthPara = document.getElementById("five");
+
+  function updateUi() {
+    firstPara.innerText = "Ankit";
+    secondPara.innerText = "Ankit";
+    thirdPara.innerText = "Ankit";
+    fourthPara.innerText = "Ankit";
+    fifthPara.innerText = "Ankit";
+  }
+</script>

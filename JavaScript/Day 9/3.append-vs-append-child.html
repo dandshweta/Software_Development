@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="list"></div>
+    <div>
+      <p>Hello</p>
+    </div>
+    world
+  </body>
+</html>
+
+<script>
+  const listElement = document.getElementById("list");
+
+  const p1 = document.createElement("p");
+  p1.innerText = "Paragraph";
+
+  const p2 = document.createElement("p");
+  p2.innerText = "Pragraph 2";
+  p2.style.color = "green";
+
+  const p3 = document.createElement("p");
+  p3.innerText = "Pragraph 3";
+  p3.style.backgroundColor = "red";
+
+  console.dir(p1);
+
+  listElement.appendChild(p1);
+  listElement.appendChild(p2);
+  listElement.append("Ankit");
+  listElement.append(p3);
+</script>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products</title>
+  </head>
+  <body>
+    <div id="products">
+      <p>Please wait</p>
+    </div>
+  </body>
+</html>
+<script>
+  console.log("Code Started");
+  const productListContainer = document.getElementById("products");
+
+  function apiSuccess(data) {
+    return data.json();
+  }
+
+  function resultSuccess(data) {
+    renderUI(data);
+  }
+
+  fetch("https://fakestoreapi.com/products")
+    .then(apiSuccess)
+    .then(resultSuccess)
+    /*  .then(function (data) {
+      resultSuccess("data");
+    })
+    .then((data) => {
+      resultSuccess(data);
+    }) */
+    .catch((err) => console.log(err));
+
+  function renderUI(data) {
+    productListContainer.innerHTML = "";
+    console.log("I got the data:", data);
+
+    for (let i = 0; i < data.length; i++) {
+      const divElem = document.createElement("div");
+      divElem.textContent = data[i].title;
+      productListContainer.appendChild(divElem);
+    }
+  }
+  console.log("Code Ended");
+</script>
+
+<script>
+  function calcuator(a, b, cb) {
+    return cb(a, b);
+  }
+
+  function add(a, b) {
+    return a + b;
+  }
+  function subtract(a, b) {
+    return a - b;
+  }
+  function divide(a, b) {
+    return a / b;
+  }
+  function multiply(a, b) {
+    return a * b;
+  }
+
+  const resultOne = calcuator(10, 20, add);
+  const resultTwo = calcuator(10, 20, subtract);
+  const resultThree = calcuator(10, 20, divide);
+
+  console.log({ resultOne, resultTwo, resultThree });
+</script>

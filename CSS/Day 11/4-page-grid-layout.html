@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0;
+      }
+      .item1 {
+        grid-area: header;
+      }
+      .item2 {
+        grid-area: menu;
+      }
+      .item3 {
+        grid-area: main;
+      }
+      .item4 {
+        grid-area: right;
+      }
+      .item5 {
+        grid-area: footer;
+      }
+
+      .grid-container {
+        display: grid;
+        grid-template-areas:
+          "header header header header header header"
+          "menu main main main right right"
+          "menu footer footer footer footer footer";
+        gap: 10px;
+        background-color: #2196f3;
+        padding: 10px;
+      }
+
+      .grid-container > div {
+        background-color: rgba(255, 255, 255, 0.8);
+        text-align: center;
+        padding: 20px 0;
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="item1">Header</div>
+      <div class="item3">Main</div>
+      <div class="item4">Right</div>
+      <div class="item5">Footer</div>
+    </div>
+  </body>
+</html>
+
+<script>
+  let a = "baga";
+  let b = "gaba";
+
+  let aObj = { a: 2, b: 1, g: 1, c: 1, x: 10 };
+  let bObj = { a: 20, b: 10, g: 11, c: 12, u: 10 };
+
+  const compareObj = (obja, objb) => {
+    if (Object.keys(obja).length !== Object.keys(objb).length) {
+      return false;
+    }
+
+    for (let item in obja) {
+      const firstElem = obja[item];
+      const secondElem = objb[item];
+
+      /*  if (firstElem !== secondElem) {
+        return false;
+      } */
+      console.log({ item, firstElem, secondElem });
+      /*
+      const secondElem = objb[item];
+
+      console.log({ item, obja, objb, firstElem, secondElem });
+      */
+    }
+  };
+
+  compareObj(aObj, bObj);
+</script>
+
+<script>
+  const sortStr = (str) => {
+    return str.sort();
+  };
+
+  const input = ["bag", "gab", "foo", "oof", "abg"];
+
+  const findAnagramGroups = (data) => {
+    const results = [];
+    const ignoreIndexes = { 1: true, 4: true };
+
+    for (let i = 0; i < input.length; i++) {
+      // The index should not be in traverrsed list
+      const resultBucket = [input[i]];
+
+      for (let j = i + 1; j < data.length; j++) {
+        // If match after sort -> Push into resultBucket - ["bag", "gab", "abg"]
+      }
+
+      if (resultBucket.length > 1) {
+        results.push(resultBucket);
+      }
+    }
+
+    // Loop -> i, j -> resultBucket ["bag"]
+    // i -> sort -> "abg"
+    // j - gab -> "abg"
+    // compare -> If match -> push into result bucket -> ignoreObj : index
+    // i - foo -> sort -> foo
+    // If not match - skip
+    //
+    // if resultBucket.length > 1 -> results.push(resultBucket)
+  };
+
+  console.log(findAnagramGroups(input));
+</script>

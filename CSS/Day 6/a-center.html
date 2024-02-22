@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body,
+      p {
+        margin: 0;
+      }
+      .container {
+        display: flex;
+        justify-content: space-between;
+        gap: 4px;
+      }
+      .item {
+        background-color: red;
+        padding: 12px;
+      }
+
+      .col-4 {
+        flex: 4;
+      }
+      .col-6 {
+        flex: 6;
+      }
+
+      .second-list {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .second-list-item {
+        background-color: white;
+        min-width: 90px;
+        display: flex;
+        gap: 4px;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item col-4">A</div>
+      <div class="item col-6">
+        <div class="second-list">
+          <div class="second-list-item">
+            <span>IC</span>
+            <p>Home</p>
+          </div>
+          <div class="second-list-item">
+            <span>IC</span>
+            <p>About</p>
+          </div>
+          <div class="second-list-item">
+            <span>IC</span>
+            <p>Blogs</p>
+          </div>
+          <div class="second-list-item">
+            <span>IC</span>
+            <p>Contact us</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  let profile = {
+    name: "Ankit",
+    country: "india",
+    getDetails: function () {
+      return this;
+    },
+    details: {
+      city: "Morena",
+      state: "MP",
+      getInnerDetails: function () {
+        return this;
+      },
+      getInnerDetails2: () => {
+        return this;
+      },
+    },
+    isActive: true,
+    STATUS: true,
+  };
+
+  //console.log(profile.getDetails());
+  //console.log(profile.details.getInnerDetails());
+  console.log(profile.details.getInnerDetails2());
+</script>

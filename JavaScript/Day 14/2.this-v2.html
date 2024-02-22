@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  var name = "Tarun";
+  var country = "India";
+  const profile = {
+    name: "Reetika",
+    country: "USA",
+    greeting: function () {
+      console.log("this NF: ", this);
+      return `Welcome ${this.name} from ${this.country}`;
+    },
+    greetingsV2: () => {
+      console.log("this Arr: ", this);
+      return `Welcome ${this.name} from ${this.country}`;
+    },
+  };
+
+  console.log(profile.greeting());
+  console.log(profile.greetingsV2());
+</script>
